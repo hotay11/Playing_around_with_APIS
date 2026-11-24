@@ -1,9 +1,9 @@
 const $ = id => document.getElementById(id);
 let days = [];
 
-const info = c => c === 0 ? ["Clear sky"] : c <= 2 ? ["Partly Cloudy"] : c === 3 ? ["Overcast"]
-: c <= 48 ? ["Foggy"] : c <= 57 ? ["Drizzle"] : (c <= 67 || (c >= 80 && c <= 82)) ? ["Rain"]
-: c <= 86 ? ["Snow"] : ["Thunderstorm"];
+const info = c => c === 0 ? ["\u2600\uFE0F", "Clear sky"] : c <= 2 ? ["\u26C5","Partly cloudy"] : c === 3 ? ["\u2601\uFE0F","Overcast"]
+: c <= 48 ? ["\uD83C\uDF2B\uFE0F","Foggy"] : c <= 57 ? ["\uD83C\uDF26\uFE0F","Drizzle"] : (c <= 67 || (c >= 80 && c <= 82)) ? ["uD83C\uDF27\uFE0F","Rain"]
+: c <= 86 ? ["\u2744\uFE0F","Snow"] : ["\u26C8\uFE0F","Thunderstorm"];
 
 const say = (t, isInfo) => { $("msg").textContent = t; $("msg").className = isInfo ? "info" : ""; $("msg").hidden = false; };
 const get = async u => {const r = await fetch(u); if (!r.ok) throw Error(r.status); return r.json(); };
