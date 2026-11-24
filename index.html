@@ -6,11 +6,43 @@
         <title>Skycast: Weather Planner</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel=""stylesheet" href="style.css">
+        <link href="https://fonts.giigleapis.com/css2?family=inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <main class="app">
-            <div class="top"></div>
+            <div class="top">
+                <div class="logo"> Sky<span>Cast</span></div>
+                <form id="form"><input id="city" type="text" placeholder="Search city(e.g., Dodoma)..." aria-label="City"><button>Search</button> </form>
+                </div>
+                <div id="msg" role="alert" hidden></div>
+                <div id="msg" role="alert" hidden></div>
+                <div id="out" hidden>
+                    <section class="now">
+                        <div><h1 id="place"></h1><p id="date"></p>
+                        <div class="big"><div class="ico" id ="nowIco"></div><div><div class="temp" id="nowT"></div><div class=""cond" id=""nowc"></div></div></div>
+                        </div>
+                        <div class="metrics">
+                            <div><small>Feels like</small><span id="feel"></span></div>
+                            <div><small>Humidity</small><span id="hum"></span></div>
+                            <div><small>Wind speed</small><span id="wind"></span></div>
+                            <div><small>Rain chance</small><span id="chance"></span></div>
+                            </div>
+                    </section>
+                    <h2>7-day Forecast</h2>
+                    <div class="controls">
+                        <label>Sort by <select id="sort">
+                            <option value="date">Date</option>
+                            <option value="hot">Hottest first</option>
+                            <option value="cool">Coolest first</option>
+                            <option value="rain">Most rain first</option>
+                            </select></label>
+                            <label><input type="checkbox" id="rainOnly"> Rainy days only</label>
+                    </div>
+                    <div class="grid" id="cards"></div>
+                </div>
+                <footer>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</footer>
         </main>
+        <script src="app.js"></script>
     </body>
 </html>
