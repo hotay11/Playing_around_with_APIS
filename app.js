@@ -14,15 +14,15 @@ async function search(city) {
     $("form").querySelector("button").disabled = true;
     say("loading forecast...", true);
     try{
-        const g = await get('https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1');
-        if (!g.results) { $("out").hidden = true; return say('No city found for "${city}". Check the spelling and try again.');}
+        const g = await get(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1`);
+        if (!g.results) { $("out").hidden = true; return say(`No city found for "${city}". Check the spelling and try again.`);}
         const {latitude: la, longitude: lo, name, country } = g.results[0];
-        const w = await get('https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}' + '&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code' +'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&timezone=auto');
+        const w = await get(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}` + '&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code' +'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&timezone=auto');
         const c = w.current, d= w.daily;
         if (!c || !d) throw Error("bad response");
     
         [$("nowIco").textContent, $("nowC").textContent] = info(c.weather_code);
-        $("place").textContent = country? '${name}, ${country}' : name;
+        $("place").textContent = country? `${name}, ${country}` : name;
         $("date").textContent = new Date(c.time).toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "short"});
         $("nowT").textContent = Math.round(c.temperature_2m) + "°C";
         $("feel").textContent = Math.round(c.apparent_temperature) + "°C";
