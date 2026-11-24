@@ -11,7 +11,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-     padding:200px
+     padding:20px
     }
 
 .app{width:100%;
@@ -44,7 +44,7 @@ color:#fff;
 font-size: .95rem;
 }
 
-input ::placeholder{color:rgba(255, 255,255,.6)}
+input::placeholder{color:rgba(255, 255,255,.6)}
 button{
     background: #eab308;
     color: #1a1a1a;
@@ -82,25 +82,25 @@ color: #e2e8f0}
 .big{
     display:flex; 
     align-items: center; 
-    gap: 16px}.big.ico{font-size: 4rem}
+    gap: 16px}.big .ico{font-size: 4rem}
 .temp{
-    font-size:4rem; 
+    font-size:4.5rem; 
     font-weight: 800; 
     line-height: 1; 
-    background: linear-gradieny(#fff, #fde68a); 
+    background: linear-gradient(#fff, #fde68a); 
     -webkit-background-clip:text; 
     background-clip:text; 
     -webkit-text-fill-color:transparent}
-.comd{font-size: 1.2rem; 
+.cond{font-size: 1.2rem; 
     color: #eab308;}
-.metric{display:grid; 
+.metrics{display:grid; 
     grid-template-columns:1fr 1fr; 
     gap: 14px; align-content:center }
 .metrics div{
     background:rgba(255, 255, 255,.06); 
     border:1px solid rgba(255, 255, 255,.08); 
     border:1px solid rgba(255, 255, 255,.1); 
-    border-radius:20px; padding: 28px; margin-bottom:28px}
+    border-radius:14px; padding: 14px 16px; font-size:1.25rem; font-weight:700}
 .metrics small{
     display:block; 
     font-size:.8rem; 
@@ -128,13 +128,13 @@ select option{color:#0f172a;}
     repeat(auto-fit, minmax(110px, 1fr)); 
     gap:14px}
 .card{background:rgba(255,255,255,.07); 
-    border: 1px solid #ffff00; 
+    border: 1px solid rgba(255,255,255,.12); 
     border-radius:16px; 
     padding: 18px 12px; 
     text-align:center;
     transition: transform .2s}
 .card:hover{ transform: translateY(-4px)}.card.rain{border-color:#eab308}
-.card b{display:block; color:#d4d4d8}.card.rain{border-color:#eab308}
+.card b{display:block; color:#d4d4d8}
 .card small{display:block;color:#9ca3af; font-size:.85rem}a{color:#facc15}
 [hidden]{display:none!important}
-@media(maxwidth:768px){.now{grid-template-columns: 1fr}}
+@media(max-width:768px){.now{grid-template-columns: 1fr}}
