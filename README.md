@@ -4,7 +4,7 @@ Skycast is a web app that helps people plan their week around the weather. A use
 
 - **Live site (load balancer):** https://joshuahotay.tech
 - **Load balancer IP:** http://13.40.24.204
-- **Demo video:** `PASTE YOUR VIDEO LINK HERE` (under 2 minutes)
+- **Demo video:** https://youtu.be/edxplwYqkNE?si=R8vMFsLiPwHYZV4R (under 2 minutes)
 - **Repository:** https://github.com/hotay11/Playing_around_with_APIS
 
 ## Features
