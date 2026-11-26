@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <!---SkyCast weather planner. singel page app using iopen meteo for weatherdata logic is in app.js styling in style.css ----->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Skycast: Weather Planner</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,17 +11,24 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+    <!--- Header and Logo search form ----->
         <main class="app">
             <div class="top">
                 <div class="logo"> Sky<span>Cast</span></div>
                 <form id="form"><input id="city" type="text" placeholder="Search city(e.g., Dodoma)..." aria-label="City"><button>Search</button> </form>
                 </div>
+                <!--- Dispalys error messages information to the user ---->
                 <div id="msg" role="alert" hidden></div>
+                <!-- conatins the weather resukts hidden until data is available-->
                 <div id="out" hidden>
+                    <!--- contains the weather results, hidedn untill the data is available-->
                     <section class="now">
+                        <!-- shows the city name and current date-->
                         <div><h1 id="place"></h1><p id="date"></p>
+                        <!-- shows the current weather icon and temperature and condition-->
                         <div class="big"><div class="ico" id="nowIco"></div><div><div class="temp" id="nowT"></div><div class="cond" id="nowC"></div></div></div>
                         </div>
+                        <!--- Displays additional weather details -->
                         <div class="metrics">
                             <div><small>Feels like</small><span id="feel"></span></div>
                             <div><small>Humidity</small><span id="hum"></span></div>
@@ -28,20 +36,27 @@
                             <div><small>Rain chance</small><span id="chance"></span></div>
                             </div>
                     </section>
+                    <!--- Heading for the seven day weather forecast-->
                     <h2>7-day Forecast</h2>
+                    <!-- provides options for sorting and filtering forecast days-->
                     <div class="controls">
+                        <!--- Dropdown menue for the chood=sing of the forecast resukt display-->
                         <label>Sort by <select id="sort">
                             <option value="date">Date</option>
                             <option value="hot">Hottest first</option>
                             <option value="cool">Coolest first</option>
                             <option value="rain">Most rain first</option>
                             </select></label>
+                            <!-- check box to display only days with rain -->
                             <label><input type="checkbox" id="rainOnly"> Rainy days only</label>
                     </div>
+                    <!-----J avascript adds the forecast cards inside this container --->
                     <div class="grid" id="cards"></div>
                 </div>
+                <!-- credits the weather data provoder ---->
                 <footer>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</footer>
         </main>
+    <!--- Connects the javascript file that handles data and page interactions ---->
         <script src="app.js"></script>
     </body>
 </html>
